@@ -16,13 +16,14 @@ public class NeighborDataBase {
         System.out.println("Welcome to the neighbor database system for our street");
 
         while(true) {
+            System.out.print(System.lineSeparator());
             System.out.println("Menu:");
             System.out.println("1 - Enter new neighbor.");
             System.out.println("2 - Delete neighbor. **** NOT IMPLEMENTED***");
             System.out.println("3 - Show list of neighbors.");
             System.out.println("4 - Modify neighbor entry");
             System.out.println("5 - Exit Program");
-            System.out.println();
+            System.out.println("");
             System.out.print("Select: ");
 
             // SCANNER INIT
@@ -52,6 +53,7 @@ public class NeighborDataBase {
                             System.out.println("Neighbor " + (i + 1) + ": " + neighbors[i] + ".");
                         }
                     }
+                    System.out.println();
                     break;
 
                 case 4:

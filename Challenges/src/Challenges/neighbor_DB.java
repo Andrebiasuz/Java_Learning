@@ -1,11 +1,11 @@
-package Challenges
+package Challenges;
 
 import java.util.Scanner;
 
 //  You were assigned a task to create a database to store Neighbors Names in a street.
 // This is a menu base system , so create the Menu structure as well.
 
-public class Neighbor_DB {
+public class neighbor_DB {
     public static void main(String[] args) {
 
         String[] neighbors = new String[10]; // declare array.

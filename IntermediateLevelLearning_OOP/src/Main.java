@@ -80,9 +80,128 @@ public class Main {
         System.out.println("Poor Andre still has to live " + andreYearsRemainingForBS + " years to achieve BS level");
 
 
+        // PILLARS OF OBJECT ORIENTED PROGRAMMING
+
+        // INHERITANCE
+        // Using characteristics of a mother class in a child class to save code and make it agile
+        // Ex:  mother class Animal will serve as model (class) for Classes cat, dog, beaver, Monkey, etc.
+        // It will INHERIT the mold and its objects, like walking, eating, etc. Things that are COMMON to all
+        // animals, or common to all instances of that mother class.
+
+        // POLYMORPHISM
+
+        // To create a unique function that can be utilized by different classes with different characteristics,
+        // basically the reducer of IFs statements, according to Dedé
+        // https://www.youtube.com/watch?v=Lf3ZV0UsnEo
+        // Yeah, I didn't understand and neither did you so, lets put some code into it.
+
+       /*
+        public class StreetPlaza {
+            public static void main(String[] args) {
+                Neighbor Andre = new MaleNeighbor("Andre");
+                Neighbor Alexandra = new FemaleNeighbor("Alexandra");
+
+                converse(Andre);  // Output: Andre talks like a man, low pitch voice.
+                converse(Alexandra); // Output: Alexandra talks with a slightly high pitch voice.
+            }
+
+            public static void converse(Neighbor neighbor) {
+                neighbor.talk(); // talk method is called in a polymorphic way
+            }
+        }*/
+
+        // ENCAPSULATION
+
+        // Basically prevents that any unwanted interaction between the object and the outside world is done.
+        // In this way, the object can be encapsulated and used many times without interfering with other code
+        // Think about a bottle of beer that doesn't spill on your table. It is not affecting anything, just
+        // doing its job. The drink is encapsulated inside the bottle.
+
+        // DEEP DIVE IN INHERITANCE
+
+        // let's create a method in the Neighbor class that says that Andre wants to study engineering.
+        // Its deprecated because, well, you will understand later.
+        System.out.println();
+        System.out.println("Andre showing his crazy intent for engineering but without inheritance");
+        Andre.needToStudyEngineeringDeprecated();
+
+        // but wait. In this way, everybody can study engineering.
+        // Because this method is in the Neighbor superclass or mother class.
+        // There is something I have not told you. We live in an alternative universe
+        // People are divided into tribes.
+        // Andre is from the Wanaba tribe
+        // Alexandra is from the Sutobo tribe
+        // Wanabas have an aptitude for engineering. Actually only they can study engineering.
+        // Sutobos can not be engineers, but they can be PMs
+        // so using this action above (this method) in Alexandra is completely useless. She wants to be a PM.
+
+        // So in this case it makes way more sense to create Wanaba and Sutobo classes.
+        // But these people are still neighbors, they'll still have name, age and street. So why write these properties
+        // twice if we can use inheritance and create a super class Neighbor? Actually we already have it, how great.
+        // we will create 2 more class files.
+        // we created male  Wanaba and Sutobo classes., they INHERIT traits from Neighbor.
+
+        // we will create another Andre and Alexandra using these dystopian classes.
+        // so the D is for dystopian.
+
+        System.out.println();
+        System.out.println("Using inheritance the right way");
+
+        Wanaba AndreD = new Wanaba();
+        Sutobo AlexandraD = new Sutobo();
+
+        AndreD.name = "Andre";
+        AndreD.age = 36;
+        AndreD.street = "Alameda das Lamentações";
+
+        AlexandraD.name = "Alexandra";
+        AlexandraD.age = 35;
+        AlexandraD.street = "São Paulo";
+
+        AndreD.professionEngineer();
+        AlexandraD.professionPM();
+
+        // to make the infos better documented, lets create a method to show each Neighbor basic infos.
+        // Sutobos like to boast. So in the Sutobo subclass write in capitals that people in that class are sutobos
+        System.out.println();
+        System.out.println("Wanaba quietly showing data");
+        AndreD.showBasicData();
+
+        System.out.println();
+
+        System.out.println("Sutobo loudly showing data");
+        AlexandraD.showBasicData();
 
 
+        // INTERFACES
 
+        // Okay, but what about if Andre and Alexandra have a baby?
+        // There is nothing preventing that in our universe. The kid can be an engineer and also a PM, right?
+        // How to do that in OOP? We use interfaces.
+
+        // If classes are molds, interfaces are windows to methods of different classes.
+        // We will create an interface for this kid.
+        // The Kid name is Juliana, and she is cute
+        // She has the power to be an engineer from her dad, and she has mixed her mothers PM duty with her fathers engineering prowess to become a PO.
+
+        WanabaSutobo Juliana = new WanabaSutobo();
+
+        Juliana.name = "Juliana";
+        Juliana.age = 17;
+        Juliana.street = "Alameda das Lamentações";
+
+        System.out.println();
+        System.out.println("Juliana has grown strong and want to give her personal details and her profession as PO");
+        Juliana.showBasicData();
+        Juliana.professionPO();
+
+        // Also lets highlight that Alexandra has moved to Alameda with her family
+
+        AlexandraD.street = AndreD.street;
+
+        System.out.println();
+        AlexandraD.showBasicData();
 
     }
 }
+

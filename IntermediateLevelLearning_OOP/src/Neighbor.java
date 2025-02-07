@@ -33,4 +33,17 @@ public class Neighbor
         return minimalAgeToAchieveBigShot - age;
     }
 
+    public void needToStudyEngineeringDeprecated()
+    {
+        System.out.println("I am " + name +  " and I will study engineering and nothing else!");
+    }
+
+    public void showBasicData()
+    {
+        System.out.println("Name: " + name + ".");
+        System.out.println("Age: " + age + ".");
+        System.out.println("Street: " + street + ".");
+    }
+
+
 }

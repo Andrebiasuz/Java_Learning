@@ -158,8 +158,8 @@ public class Main {
         AlexandraD.age = 35;
         AlexandraD.street = "São Paulo";
 
-        AndreD.professionEngineer();
-        AlexandraD.professionPM();
+        AndreD.professionEngineer_deprecated();
+        AlexandraD.professionPM_deprecated();
 
         // to make the infos better documented, lets create a method to show each Neighbor basic infos.
         // Sutobos like to boast. So in the Sutobo subclass write in capitals that people in that class are sutobos
@@ -193,7 +193,7 @@ public class Main {
         System.out.println();
         System.out.println("Juliana has grown strong and want to give her personal details and her profession as PO");
         Juliana.showBasicData();
-        Juliana.professionPO();
+        Juliana.professionPO_deprecated();
 
         // Also lets highlight that Alexandra has moved to Alameda with her family
 
@@ -201,6 +201,34 @@ public class Main {
 
         System.out.println();
         AlexandraD.showBasicData();
+
+        // POLYMORPHISM
+
+        // Methods and classes can morph and assume different behaviours.
+        // An example, in our universe, every different tribe has its own profession.
+        // Wanaba is Engineer, Sutobo is PM, and so on.
+        // RN, we are creating every single profession method inside each tribe class
+        // Sutobo has professionPM_deprecated(), Wanaba has professionEngineer_deprecated()
+        // This is too much code, bc then every different trible we create will have a method like this.
+        // we can use polymorphism for that, by creating a method called profession in the Neighbor SuperClass.
+
+        // Showing profession statements using polymorphism
+
+        System.out.println();
+        AndreD.profession(); // prints engineer
+
+        System.out.println();
+        AlexandraD.profession(); // Prints PM
+
+        System.out.println();
+        Juliana.profession(); // prints PO
+
+
+        // CONSTRUCTORS
+
+        // WAIT, ANDRE wants to be NeighborBS, but there was already 7 people who were that. Maybe we can learn
+        // Constructors by creating a class to them. They are also tribe people so we believe they will inhrerit from
+        // Neighbor super class.
 
     }
 }

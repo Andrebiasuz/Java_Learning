@@ -1,8 +1,14 @@
 public class Sutobo extends  Neighbor
 {
-    public void professionPM()
+    public void professionPM_deprecated()
     {
-        System.out.println("My name is " + name + " and since I am a Sutobo, I will be a PM!");
+        System.out.println("My name is " + name + " and I will be a PM!");
+    }
+
+    @Override
+    public void profession()
+    {
+        System.out.println("My name is " + name + " and I will be a PM, because I am a Sutobo!");
     }
 
     @Override

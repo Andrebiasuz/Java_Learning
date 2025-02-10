@@ -45,5 +45,12 @@ public class Neighbor
         System.out.println("Street: " + street + ".");
     }
 
+    // Example for polymorphism
+
+    public void profession()
+    {
+        System.out.println("My name is " + name + " and my profession depends on my tribe");
+    }
+
 
 }

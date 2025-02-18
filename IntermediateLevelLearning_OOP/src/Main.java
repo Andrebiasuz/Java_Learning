@@ -226,10 +226,146 @@ public class Main {
 
         // CONSTRUCTORS
 
-        // WAIT, ANDRE wants to be NeighborBS, but there was already 7 people who were that. Maybe we can learn
-        // Constructors by creating a class to them. They are also tribe people so we believe they will inhrerit from
-        // Neighbor super class.
+        // Refer to challenge 4 to check about constructors. They are basically molds to initialize molds,
+        // or a set of parameters to instantiate objects
+
+        // ABSTRACT CLASSES
+
+        // we are talking much about class mother and father, etc But there is a way to make these classes "steril".
+        // in this way, the Mother Class Neighbor will not have kids, but she will be used as a mold for other classes.
+        // Now the tribal classes instantiate the objects, and the Neighbor class is standard of which these classes are created
+
+        // we will create NeighborAbs to indicate that it is abstract
+        // we will also make the tribal classes inherit from this abstract class
+        // we can also have abstract methods, which dont have any actions in the abstract class, only in the classes
+        // they are instantiated .
+        //
+        // For this, we have the profession() method as an example, but we wont use it since
+        // it is already an example of interface use.
+
+        // what is common between abstract classes and interfaces?
+        //      They can only declare abstract objects, not arguments.
+        //      They cannot instantiate objects.
+
+        // why using abstract classes at all if they dont instantiate anything?
+        //      Because in this case, we do not want to create any object from the class Neighbor. We only use it
+        //      as template. And we want to force the user to create objects the right way, since here everybody
+        //      will have its own tribe. So we create objects straight from the tribes, using the Neighbor template
+
+
+        //   Main Concepts about Superclasses and Subclasses
+        //
+        //    Superclass: The generic class from which other classes inherit. It contains attributes and
+        //    methods common to all subclasses. In the example above, Neighbor  is the superclass.
+        //    Subclass: A class derived from a superclass. The subclass inherits attributes and methods from
+        //    the superclass, but can add its own or modify (overwrite) existing ones.
+        //    In the example, Sutobo  and Wanaba are subclasses of Neighbor.
+        //    Inheritance: This is the mechanism that allows a subclass to inherit characteristics from a superclass.
+        //    In the example, both Sutobo and Wanaba inherit Neighbor's showBasicData() method.
+        //    Method overwriting: When a subclass provides a specific implementation for a method that
+        //    is already defined in its superclass.
+        //    In the example, profession() is overwritten in the Sutobo and Wanaba subclasses.
+
+        //  Main Concepts about Interfaces
+        //
+        //     Concept: An interface is like a contract that contains abstract method declarations
+        //    and constants. Any class that implements an interface must provide the implementation of the
+        //    methods defined by it.
+        //    Separation of Responsibilities: Interfaces help separate the “what to do” (defined by the interface)
+        //    from the “how to do it” (implemented by the classes), promoting a cleaner and more modular design.
+        //    Multiple Inheritance: In Java, a class can only inherit from a single class,
+        //    but it can implement several interfaces.
+        //    This allows you to create varied behaviors without the limitations of single inheritance.
+        //    Flexibility and Polymorphism: Using interfaces allows different classes to implement
+        //    the same contract, facilitating the use of polymorphism when working with
+        //    methods that accept objects of different types.
+        //    Example in the Context of Neighbors :
+        //    Imagine a Neighbor interface with methods such as Welcome(), Walk() and Shout().
+        //    Classes like Andre and Alexandra could implement this interface and provide specific behaviors
+        //    for these methods, while the code that consumes the interface treats both objects uniformly.
+
+        // CONSTRUCTOR OVERLOAD
+
+        // We need to add two attributes to our neighbor, yearsAsNeighbor and NeighborRank.
+        // Neighbor ranks are Casual, Reliable, Guardian, and Grand.
+        // Ranks are fixed, so let's create an enum.
+        // ENUM created, so we need to change the main neighbor superclass to put these values.
+
+        // Constructor created in the super class. A constructor with the values originally created(name,age,street)
+        // and another one with the values that came after.
+        // This is important because, if we created objects with the OLD constructor and after decide to change that
+        // Constructor, we would have to change the old code.
+        // This is not scalable
+        // In this way, we overload the original constructor, adding new features.
+        // Now we can initialize Neighbor using both constructor. Using what is best for the moment.
+
+        Sutobo Tomas = new Sutobo("Tomas", 30 , "Rua do Reticulo", 5, NeighborRank.GRAND);
+
+        System.out.println();
+        Tomas.showBasicData();
+
+        // NEXT METHOD OVERLOAD, WE WILL OVERLOAD THE showBasicData()
+
+
+        //     Method overloading: This is the process of defining more than one method with the same name in a class,
+        //     but with different signatures. Method signatures differ by the number of parameters,
+        //     the type of the parameters, or the order of the parameters.
+        //    Method signature: The signature of a method includes its name and the list of parameters.
+        //    Overloading requires that each overloaded method has a unique signature, which allows the
+        //    compiler to distinguish between methods.
+        //    Flexibility and Reuse: Method overloading allows you to reuse the method name to perform similar operations,
+        //    but adapted to different types of input. For example, you could have a method for calculating damage in a fight with different types of attacks, such as a physical attack or a jutsu attack.
+        //    Example in the Context of Neighbor: Imagine a shout() method that can be overloaded to accept different
+        //    parameters: one that performs a standard shout and another that performs a shout based on
+        //    how angry the person is. This way, you can use the same method name for different  scenarios.
+        //    Limitations: Method overloading is based only on the method signature (name and parameters).
+        //    The return type alone cannot be used to differentiate overloaded methods.
+
+        // Tomas is very smart. He wants to show his IQ in Basic Data.
+        System.out.println();
+        System.out.println("Basic data with IQ showing");
+        Tomas.showBasicData(190);
+
+        // USE OF THE OVERRIDE ANNOTATION
+         //
+        //    Concept of @Override: The @Override annotation is used to mark a method in a subclass that is
+        //    overriding a method in the superclass. This clearly indicates the intention to override an
+        //    existing method in the superclass.
+        //    Compilation error: Although not mandatory, using @Override helps the compiler check
+        //    whether the subclass method is actually overriding a superclass method.
+        //    If the superclass method is changed or removed, the compiler will generate an error if the
+        //    subclass method is annotated with @Override and does not match the signature of the method
+        //    in the superclass.
+        //    Improved readability: The @Override annotation improves the clarity of the code by making it clear
+        //    that the method is overriding a method in the superclass. This makes the code easier to understand,
+        //    especially in complex class hierarchies.
+        //    Convention and Practice: Although the use of @Override is not mandatory,
+        //    it is a widely accepted and recommended practice that helps to avoid subtle errors and facilitates code maintenance.
+        //    Example in the Context of Naruto: Imagine a Ninja class with a method shout() and subclasses such as
+        //    Wanaba and Sutobo that override this method. Using @Override on subclasses helps ensure
+        //    that the overridden method corresponds to the method defined in the superclass.
+
+        // REFERENCE IN MEMORY x VALUE IN MEMORY
+        System.out.println();
+
+        System.out.println("Reference in memory");
+        //System.out.println(AlexandraD); // prints Sutobo@6e2c634b , this is the space allocated in memory
+        //System.out.println(AlexandraD.name); // prints value stored in the memory (name Alexandra), this is value in memory
+
+        // what is toString method is going to do?
+
+        //toString , as auto generated by IntellJ, will provide me documentation of attributes  tied to the class.
+        System.out.println();
+        System.out.println("Printing object with toString");
+        System.out.println(AlexandraD.toString());
+
+
+
+
+
 
     }
+
+
 }
 

@@ -359,11 +359,52 @@ public class Main {
         System.out.println("Printing object with toString");
         System.out.println(AlexandraD.toString());
 
+        //
+        //Final method: A method declared with the final keyword cannot be overwritten by subclasses.
+        // This is useful when you want to ensure that the implementation of a method remains unchanged
+        // in derived classes.
+        //Final Class: A class that is marked as final cannot be extended.
+        // This prevents other classes from inheriting from a final class, ensuring that its functionality is preserved without modification.
+        // Common Use: Final methods and classes are often used in situations where the security,
+        // integrity or expected behavior of a class needs to be guaranteed, such as in frameworks or libraries.
+        // Benefits of Final Methods: The use of final methods can improve performance,
+        // as the compiler can optimize calls to these methods with the certainty that
+        // they won't be changed in subclasses. It also helps to avoid accidental overwriting errors.
 
 
+        //    Final Class: A class declared with the final keyword cannot be extended by other classes.
+        //    This means that no subclasses can be created from it, ensuring that its implementation
+        //    remains immutable.
+        //    Reason for Use: Final classes are often used when you want to ensure that the logic or
+        //    behavior of the class is not altered by inheritance, especially in sensitive APIs or
+        //    libraries where changes could compromise integrity.
+        //    Example: The String class in Java is final. This prevents other classes from changing
+        //    the way strings are handled, maintaining the security and consistency of the language.
+        //    Benefits of Final Classes: They help improve security and performance,
+        //    since the compiler can perform optimizations knowing that the class will not be
+        //    modified. In addition, problems related to inheritance are avoided, such as the
+        //    accidental overwriting of important methods.
 
 
+        // ENCAPSULATION
 
+        // Main concepts about encapsulation
+
+        //Concept of Encapsulation: This consists of protecting the attributes of a class,
+        // allowing them to be accessed or modified only through public methods.
+        // This prevents direct and uncontrolled access to an object's data.
+        // Attribute privacy: The attributes of a class are declared as private,
+        // which means that they cannot be accessed directly by other classes.
+        // Instead, we use public methods called getters and setters.
+        // Security and Control: Encapsulation allows you to control how the internal data of a class
+        // is modified by implementing validations within the setter methods.
+        // This protects the integrity of the data.
+        //Better Organization: The use of encapsulation improves the organization and maintenance of code,
+        // separating responsibilities for accessing and modifying attributes and facilitating the
+        // evolution of the system.
+        // Example in the context of Neighbor: Imagine a NeighborAndre class with attributes such as name,
+        // age and tribe. These attributes would be private and could only be accessed or modified
+        // through public methods, guaranteeing the protection of the character's information.
     }
 
 

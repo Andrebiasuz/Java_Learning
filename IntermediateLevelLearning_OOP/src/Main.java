@@ -405,8 +405,49 @@ public class Main {
         // Example in the context of Neighbor: Imagine a NeighborAndre class with attributes such as name,
         // age and tribe. These attributes would be private and could only be accessed or modified
         // through public methods, guaranteeing the protection of the character's information.
-    }
 
+
+        //Getters and Setters - A more technical explanation
+        //
+        //Getters and Setters are special methods used to access and modify the private attributes of a class in Java.
+        // They are part of the concept of encapsulation, allowing the internal data of a class to be
+        // protected and accessed in a controlled manner.
+        //Main concepts about Getters and Setters
+        //
+        // Getters: These are public methods used to access the values of the private attributes of a class.
+        // They allow other objects to "read" the value of an attribute, but without directly modifying the data.
+        //
+        // Setters: These are public methods used to modify the values of a class's private attributes.
+        // They allow the value of an attribute to be changed in a controlled way, and can include validations.
+        //
+        // Encapsulation: Private attributes cannot be accessed directly by other classes.
+        // The getters and setters methods ensure that information is manipulated in a safe and controlled manner,
+        // respecting encapsulation.
+        //
+        // Validations: Setters methods can include checks and validations before modifying attribute values,
+        // guaranteeing data integrity.
+        // Example in the context of the code: Imagine a Neighbor class with the age attribute.
+        // The getter method for age will allow other classes to "read" the character's age,
+        // while the setter will allow the age to be changed,
+        // perhaps with a validation that prevents negative values.
+        //
+
+        // TASK CREATE NEIGHBOR SUPER CLASS USING ENCAPSULATION
+
+        // created as Neighbor_Encap
+
+        // ENUMS
+
+        // TASK: CREATE A CLASS CALLED NEIGHBOR ERRANDS AND AN ENUM WITH A SET OF DIFFICULTIES.
+
+        Errand Errand1 = new Errand("Go to the mall and get me a soda", ErrandRank.C);
+        System.out.println();
+        Errand1.showDescription();
+
+        // PRINT WITH TOSTRING
+        System.out.println(Errand1.toString());
+
+    }
 
 }
 
